@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+.contenedor{
+    font-size: 1.2em;
+    min-height: 100%;
+}
+.contenedor > *{
+    margin: 0.5%;
+}
+
+.icono{
+    grid-area: icono;
+    margin: 1% 5% 0% 5%;
+}
+img {
+    border-radius: 45%;
+}
+
+.entrada {
+    grid-area: entrada;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0% 5% 0% 5%;
+    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+    padding: 15px;
+}
+.notificacion{
+    grid-area: notificacion;
+    padding: 0px;
+    padding-left: 8%;
+    text-align: left;
+}
+.encriptar{
+    grid-area: encriptar;
+    text-align: center;
+    align-items: center;
+}
+#encriptar{
+    background-color:#0A3871;
+    width: 85%;
+    padding: 15px;
+    border-radius: 10px;
+    color: #f1f1f1;
+}
+
+.desencriptar{
+    grid-area: desencriptar;
+    /* background-color: #f1f1f1; */
+    text-align: center;
+}
+#desencriptar{
+    background-color:#f1f1f1;
+    width: 85%;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    color: #1d1717;
+}
+.footer{
+    grid-area: footer;
+    text-align: center;
+    font-size: 1em;
+    box-shadow: -1px 1px 5px 5px rgba(0,0,0,0.75);
+    margin: 1% 5% 3% 5%;;
+    border-radius: 15px;
+    z-index: 1;
+}
+.resultado{
+    grid-area: resultado;
+    border-radius: 15px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1em;
+    height: 60%;
+    width: 80%;
+    border: #f1f1f1;
+    align-items: center;
+    padding: 15px;
+}
+
+.copiar{
+    grid-area: copiar;
+    text-align: center;
+}
+#copiar{
+    background-color:#f1f1f1;
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    color: #1d1717;
+}
+
+.contenedor{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+        "icono"         80px
+        "entrada"       auto
+        "notificacion"  2em
+        "encriptar"     50px
+        "desencriptar"  50px
+        "footer"        auto/
+        100%;
+    ;
+}
+/* 768px */
+@media (min-width: 576px){
+    .notificacion{
+        padding-left: 5%;
+    }
+    .contenedor{
+        grid-template: 
+            "icono icono"               80px
+            "entrada entrada"           auto
+            "notificacion notificacion" 2em
+            "encriptar desencriptar"    50px
+            "footer footer"             auto /
+            50% 50%;
+        ;
+    }
+}
+
+@media (min-width: 992px){
+    .entrada{
+        margin: 0% 3% 0% 3%;
+    }
+    .resultado{
+        height: 80%;
+        display: none;
+    }
+    .copiar{
+        margin: 10% 3% 0% 0%;
+    }
+    .footer{
+        margin: 25% 2% 15% 2%;
+        background-image: url(../img/Muñeco.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 100;
+    }
+    
+    .contenedor{
+        grid-template: 
+            "icono icono footer"               80px
+            "entrada entrada footer"           450px
+            "notificacion notificacion footer" 2em
+            "encriptar desencriptar footer"   auto /
+            35% 35% 25%;
+        ;
+    }
+}
